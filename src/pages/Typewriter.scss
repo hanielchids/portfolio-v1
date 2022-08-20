@@ -1,0 +1,20 @@
+.typewrite {
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  text-align: center;
+  // top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  color: #fff;
+  // background: green;
+
+  // background: rgba(0, 0, 0, 0.5);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+}
