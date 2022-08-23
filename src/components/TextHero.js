@@ -12,7 +12,6 @@ import {
   ImgWrap,
   Img,
 } from "./TextHeroElements";
-import image from "../resources/images/undraw_developer_activity_re_39tg.svg";
 
 const TextHero = () => {
   return (
@@ -35,7 +34,7 @@ const TextHero = () => {
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={image} alt="cool picture" />
+                <Img src="" alt="cool picture" />
               </ImgWrap>
             </Column2>
           </TextRow>
