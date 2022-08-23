@@ -1,0 +1,163 @@
+$red: #ff9d87;
+$blue: #71c5df;
+$green: #84c6a2;
+$space2border: 40px;
+$border-width: 5px;
+$spansize: 10px;
+$text-color: black;
+
+body {
+  font-family: -apple-system, "helvetica neue", helvetica, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#timeline {
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.date {
+  position: relative;
+  float: left;
+  text-align: right;
+  width: 200px;
+  display: block;
+  font-size: 14px;
+  color: lighten($text-color, 20%);
+  vertical-align: middle;
+  line-height: $spansize + 2 * $border-width;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  left: $border-width * 1.5 + ($spansize * 0.5);
+}
+
+.red-span,
+.blue-span,
+.green-span {
+  position: relative;
+  float: right;
+  height: $spansize;
+  width: $spansize;
+  margin-right: 0;
+  margin-left: $space2border - $border-width * 1.5;
+  border-radius: 100%;
+  background: white;
+  display: block;
+  z-index: 2;
+  border: $border-width solid tomato;
+}
+
+.job {
+  padding-top: 50px;
+  width: 100%;
+  display: block;
+}
+
+.job_description {
+  position: relative;
+  float: left;
+  display: block;
+  width: calc(100% - 250px);
+  padding-left: $space2border;
+  padding-bottom: 15%;
+  border-left: $border-width solid tomato;
+}
+
+.red .job_description {
+  border-left: $border-width solid $red;
+}
+.red span {
+  border: $border-width solid $red;
+}
+
+.blue .job_description {
+  border-left: $border-width solid $blue;
+}
+.blue span {
+  border: $border-width solid $blue;
+}
+
+.green .job_description {
+  border-left: $border-width solid $green;
+}
+.green span {
+  border: $border-width solid $green;
+}
+
+.end .job_description {
+  border-left: $border-width solid transparent;
+}
+
+h1 {
+  position: relative;
+  top: -11px;
+  vertical-align: middle;
+  letter-spacing: -0.025rem;
+  font-size: 1.8em;
+  line-height: 1.2em;
+  font-weight: 600;
+  color: lighten($text-color, 0%);
+}
+
+h2 {
+  position: relative;
+  font-size: 1.4em;
+  line-height: 1.2em;
+  font-weight: 400;
+  color: lighten($text-color, 50%);
+}
+
+.content {
+  margin-top: 20px;
+  line-height: 1.4em;
+  color: lighten($text-color, 50%);
+  font-weight: inherit;
+}
+
+@media screen and (max-width: 800px) {
+  #timeline {
+    width: 90%;
+  }
+
+  .job_description {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: $space2border;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .content {
+    font-size: 14px;
+  }
+
+  .date {
+    position: relative;
+    float: left;
+    top: 0px;
+    left: $border-width * -0.5 + ($spansize * -0.5);
+    text-align: left;
+    width: 100%;
+    display: block;
+    font-size: 12px;
+  }
+
+  span {
+    float: left;
+    margin-left: 0;
+    margin-right: $space2border - $border-width * 1.5;
+  }
+}
