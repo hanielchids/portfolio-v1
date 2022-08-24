@@ -21,6 +21,22 @@ export const TextWrapper = styled.div`
   justify-content: flex-start;
 `;
 
+export const TechWrapper = styled.div`
+  display: grid;
+  z-index: 5;
+  height: 500px;
+  width: 100%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 24px;
+  justify-content: flex-start;
+
+  @media screen and (max-width: 768px) {
+    height: 700px;
+  }
+`;
+
 export const TextRow = styled.div`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);

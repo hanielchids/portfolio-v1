@@ -1,7 +1,11 @@
 import React from "react";
-import TypewriterText from "../pages/TypewriterText";
-import { VideoContainer, VideoHeroBg, VideoBg } from "./VideoElements";
-import video1 from "../resources/videos/video (1).mp4";
+import TypewriterText from "../../pages/TypewriterText";
+import {
+  VideoContainer,
+  VideoHeroBg,
+  VideoBg,
+} from "./HeroStyles/VideoElements";
+import video1 from "../../resources/videos/video (1).mp4";
 
 const VideoHero = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
-import "./Carousel.scss";
+import "./HeroStyles/Carousel.scss";
 import {
   TextContainer,
-  TextWrapper,
+  TechWrapper,
   TechRow,
   Column1,
   WordWrapper,
@@ -12,22 +12,22 @@ import {
   Column2,
   ImgWrap,
   Img,
-} from "./TextHeroElements";
+} from "./HeroStyles/TextHeroElements";
 
 const TechHero = () => {
   return (
     <>
       <TextContainer style={{ paddingTop: 0 }}>
-        <TextWrapper>
+        <TechWrapper>
           <TechRow>
             <Column1>
               <ImgWrap>
                 {/* <img src="" alt="cool picture" /> */}
                 {/* <Carousel /> */}
                 <div id="slideshow">
-                  <div class="slide-wrapper">
-                    <div class="slide">
-                      <h1 class="slide-number">Programming: </h1>{" "}
+                  <div className="slide-wrapper">
+                    <div className="slide">
+                      <h1 className="slide-number">Programming: </h1>{" "}
                       <img
                         src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white"
                         alt="C++"
@@ -133,8 +133,8 @@ const TechHero = () => {
                         alt="postman"
                       />
                     </div>
-                    <div class="slide">
-                      <h1 class="slide-number">Databases: </h1>
+                    <div className="slide">
+                      <h1 className="slide-number">Databases: </h1>
                       {""}
                       <img
                         src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase  "
@@ -153,8 +153,8 @@ const TechHero = () => {
                         alt="Sequelize"
                       />
                     </div>
-                    <div class="slide">
-                      <h1 class="slide-number">DevOps and CI/CD: </h1>
+                    <div className="slide">
+                      <h1 className="slide-number">DevOps and CI/CD: </h1>
                       {""}
                       <img
                         src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white "
@@ -197,8 +197,8 @@ const TechHero = () => {
                         alt="NETLIFY"
                       />
                     </div>
-                    <div class="slide">
-                      <h1 class="slide-number">
+                    <div className="slide">
+                      <h1 className="slide-number">
                         UI Libraries and Site Builders:{" "}
                       </h1>
                       {""}
@@ -250,7 +250,7 @@ const TechHero = () => {
               </WordWrapper>
             </Column2>
           </TechRow>
-        </TextWrapper>
+        </TechWrapper>
       </TextContainer>
     </>
   );

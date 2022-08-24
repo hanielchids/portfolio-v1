@@ -1,11 +1,11 @@
 import React from "react";
-import { Heading } from "../components/TextHeroElements";
+import { Heading } from "../components/Heroes/HeroStyles/TextHeroElements";
 import "./Timeline.scss";
 
 const Timeline = () => {
   return (
     <div>
-      <div class="exp">
+      <div className="exp">
         <Heading style={{ color: "rgb(17, 24, 28)", textAlign: "center" }}>
           Experience
         </Heading>
