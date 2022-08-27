@@ -11,7 +11,7 @@ import {
   Column2,
   ImgWrap,
   Img,
-} from "./TextHeroElements";
+} from "./HeroStyles/TextHeroElements";
 
 const TextHero = () => {
   return (

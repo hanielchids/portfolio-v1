@@ -17,6 +17,17 @@
   width: 550px;
 }
 
+@media screen and (max-width: 768px) {
+  #slideshow {
+    height: 250px;
+    width: 275px;
+  }
+  .slide {
+    height: 260px;
+    width: 275px;
+  }
+}
+
 .slide:nth-child(1) {
   background: rgb(17, 24, 28);
 }
