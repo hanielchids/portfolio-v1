@@ -14,10 +14,10 @@ import {
   Img,
 } from "./HeroStyles/TextHeroElements";
 
-const TechHero = () => {
+const TechHero = ({ id, topline }) => {
   return (
     <>
-      <TextContainer style={{ paddingTop: 0 }}>
+      <TextContainer id={id} style={{ paddingTop: 0 }}>
         <TechWrapper>
           <TechRow>
             <Column1>
@@ -239,13 +239,13 @@ const TechHero = () => {
             </Column1>
             <Column2>
               <WordWrapper>
-                <TopLine>My stacks</TopLine>
+                <TopLine>{topline}</TopLine>
                 <Heading>Technologies and Tools</Heading>
                 <Subtitle>
                   I love learning and working with new tech and improving on
                   tech I'm always working with. Object Oriented programmer who's
                   also a fan of functional programming. Always finding the best
-                  and fastest way to solve problems. (Big O advocacy 👏🏾).
+                  and fastest way to solve problems. Big O advocacy 👏🏾.
                 </Subtitle>
               </WordWrapper>
             </Column2>

@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
+import { IconContext } from "react-icons/lib";
+import { animateScroll as scroll } from "react-scroll";
 
 const Nav = styled.nav`
-  // background: #000;
   background: rgb(17, 24, 28);
   height: 80px;
   margin-top: -80px;
@@ -19,6 +20,8 @@ const Nav = styled.nav`
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
+    background: ${({ scrollNav }) =>
+      scrollNav ? "rgb(17, 24, 28)" : "transparent"};
   }
 `;
 
@@ -26,7 +29,7 @@ const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   height: 80px;
-  z-index: 4;
+  z-index: 9;
   width: 100%;
   padding: 0 24px;
   max-width: 1100px;
@@ -75,7 +78,7 @@ const NavItem = styled.li`
   height: 70px;
 `;
 
-const NavLinks = styled.div`
+const NavLinks = styled(LinkS)`
   color: #fff;
   display: flex;
   align-items: center;
@@ -85,12 +88,13 @@ const NavLinks = styled.div`
   cursor: pointer;
 
   &:hover {
-    border-bottom: 3px solid lightblue;
-    color: lightblue;
+    border-bottom: 3px solid #00ccff;
+    color: #00ccff;
   }
 
   &.active {
-    border-bottom: 3px solid lightblue;
+    border-bottom: 3px solid #00ccff;
+    color: #00ccff;
   }
 `;
 
@@ -103,7 +107,7 @@ const NavBtnContainer = styled.div`
   }
 `;
 
-const NavBtn = styled.button`
+const NavBtn = styled(LinkS)`
   border-radius: 50px;
   background: rgb(32, 56, 73);
   white-space: nowrap;
@@ -123,34 +127,100 @@ const NavBtn = styled.button`
   }
 `;
 
-const NavigationBar = () => {
+const NavigationBar = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
-      <Nav>
-        <NavbarContainer>
-          <NavLogo to="/">Haniel</NavLogo>
-          <MobileIcon>
-            <FaBars />
-          </MobileIcon>
-          <NavMenu>
-            <NavItem>
-              <NavLinks to="about">About</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="about">Tech</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="about">Experience</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="about">Projects</NavLinks>
-            </NavItem>
-          </NavMenu>
-          <NavBtnContainer>
-            <NavBtn>Get In touch</NavBtn>
-          </NavBtnContainer>
-        </NavbarContainer>
-      </Nav>
+      <IconContext.Provider value={{ color: "#fff" }}>
+        <Nav scrollNav={scrollNav}>
+          <NavbarContainer>
+            <NavLogo to="/" onClick={toggleHome}>
+              Haniel
+            </NavLogo>
+            <MobileIcon onClick={toggle}>
+              <FaBars />
+            </MobileIcon>
+            <NavMenu>
+              <NavItem>
+                <NavLinks
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                >
+                  About
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="tech"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                >
+                  Tech
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="experience"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                >
+                  Experience
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="projects"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                >
+                  Projects
+                </NavLinks>
+              </NavItem>
+            </NavMenu>
+            <NavBtnContainer>
+              <NavBtn
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+              >
+                Get In touch
+              </NavBtn>
+            </NavBtnContainer>
+          </NavbarContainer>
+        </Nav>
+      </IconContext.Provider>
     </>
   );
 };
