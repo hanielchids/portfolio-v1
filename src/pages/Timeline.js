@@ -2,14 +2,12 @@ import React from "react";
 import { Heading } from "../components/Heroes/HeroStyles/TextHeroElements";
 import "./Timeline.scss";
 
-const Timeline = () => {
+const Timeline = ({ id }) => {
   return (
-    <div>
-      <div className="exp">
-        <Heading style={{ color: "rgb(17, 24, 28)", textAlign: "center" }}>
-          Experience
-        </Heading>
-      </div>
+    <div className="remove-stuff" id={id}>
+      <Heading id style={{ color: "rgb(17, 24, 28)", textAlign: "center" }}>
+        Experience
+      </Heading>
       <div id="timeline">
         <div className="job red">
           <div className="date">

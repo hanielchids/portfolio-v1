@@ -4,7 +4,7 @@ export const TextContainer = styled.div`
   color: #fff;
   background: rgb(17, 24, 28);
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 900px) {
     padding: 100px 0;
   }
 `;
@@ -13,20 +13,37 @@ export const TextWrapper = styled.div`
   display: grid;
   z-index: 5;
   height: 500px;
-  width: 100%;
+  // width: 100%;
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
   padding: 0 24px;
   justify-content: flex-start;
 `;
+export const ContactWrapper = styled.div`
+  // display: flex;
+  z-index: 5;
+  padding-top: 20px;
+  height: 700px;
+  // width: 100%;
+  max-width: 1100px;
+  // margin-right: auto;
+  margin-left: auto;
+  // padding: 0 24px;
+  padding-left: 10%;
+  justify-content: flex-start;
+
+  @media screen and (max-width: 768px) {
+    height: 400px;
+  }
+`;
 
 export const TechWrapper = styled.div`
   display: grid;
   z-index: 5;
   height: 500px;
-  width: 100%;
-  max-width: 1100px;
+  // width: 100%;
+  // max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
   padding: 0 24px;
@@ -117,7 +134,7 @@ export const ImgWrap = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 20%;
+  width: 50%;
   margin: 0 0 10px 0;
   padding-right: 0;
 `;

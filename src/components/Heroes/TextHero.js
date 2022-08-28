@@ -12,16 +12,17 @@ import {
   ImgWrap,
   Img,
 } from "./HeroStyles/TextHeroElements";
+import image from "../../resources/images/coder.svg";
 
-const TextHero = () => {
+const TextHero = ({ id, topline }) => {
   return (
     <>
-      <TextContainer>
+      <TextContainer id={id}>
         <TextWrapper>
           <TextRow>
             <Column1>
               <WordWrapper>
-                <TopLine>About Me</TopLine>
+                <TopLine>{topline}</TopLine>
                 <Heading>Get To Know Me</Heading>
                 <Subtitle>
                   I love building cool things. I'm a software engineer , with a
@@ -34,7 +35,7 @@ const TextHero = () => {
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src="" alt="cool picture" />
+                <Img src={image} alt="cool picture" />
               </ImgWrap>
             </Column2>
           </TextRow>

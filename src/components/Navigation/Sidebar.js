@@ -57,6 +57,7 @@ const SidebarLink = styled(LinkS)`
   text-decoration: none;
   list-style: none;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
   color: #fff;
 
   &:hover {
@@ -70,7 +71,7 @@ const SideBtnWrap = styled.div`
   justify-content: center;
 `;
 
-const SidebarBtn = styled.button`
+const SidebarBtn = styled(LinkS)`
   border-radius: 50px;
   background: lightblue;
   white-space: nowrap;
@@ -89,22 +90,72 @@ const SidebarBtn = styled.button`
   }
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, toggle }) => {
   return (
     <>
-      <SidebarContainer>
-        <Icon>
+      <SidebarContainer isOpen={isOpen} onClick={toggle}>
+        <Icon onClick={toggle}>
           <CloseIcon />
         </Icon>
         <SidebarWrapper>
           <SidebarMenu>
-            <SidebarLink to="">About</SidebarLink>
-            <SidebarLink to="">Tech</SidebarLink>
-            <SidebarLink to="">Experiences</SidebarLink>
-            <SidebarLink to="">Projects</SidebarLink>
+            <SidebarLink
+              onClick={toggle}
+              to="about"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+              About
+            </SidebarLink>
+            <SidebarLink
+              onClick={toggle}
+              to="tech"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+              Tech
+            </SidebarLink>
+            <SidebarLink
+              onClick={toggle}
+              to="experience"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+              Experience
+            </SidebarLink>
+            <SidebarLink
+              onClick={toggle}
+              to="projects"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+              Projects
+            </SidebarLink>
           </SidebarMenu>
           <SideBtnWrap>
-            <SidebarBtn>Get In Touch</SidebarBtn>
+            <SidebarBtn
+              onClick={toggle}
+              to="contact"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+              Get In Touch
+            </SidebarBtn>
           </SideBtnWrap>
         </SidebarWrapper>
       </SidebarContainer>
